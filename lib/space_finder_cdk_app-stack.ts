@@ -13,7 +13,8 @@ export class SpaceFinderCdkAppStack extends Stack {
   private spacesTable = new GenericTable(this, {
     tableName: 'SpacesTables',
     primaryKey: 'spacesId',
-    createLambdaPath: 'Create'
+    createLambdaPath: 'Create',
+    readLambdaPath: 'Read'
   })
 
   constructor(scope: Construct, id: string, props?: StackProps) {
