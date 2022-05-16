@@ -16,6 +16,7 @@ export class SpaceFinderCdkAppStack extends Stack {
     createLambdaPath: 'create', // if error causes change to Create
     readLambdaPath: 'read', // if error causes change to Read
     updateLambdaPath: 'update',
+    deleteLambdaPath: 'delete',
     secondaryIndexes: ['location']
 
   })
