@@ -53,7 +53,8 @@ export class SpaceFinderCdkAppStack extends Stack {
     const spaceResource = this.api.root.addResource('spaces');
     spaceResource.addMethod('POST', this.spacesTable.createLambdaIntegration)
     spaceResource.addMethod('GET', this.spacesTable.readLambdaIntegration);
-    spaceResource.addMethod('PUT', this.spacesTable.updateLambdaIntegration);
+    spaceResource.addMethod('PUT', this.spacesTable.readLambdaIntegration);
+    spaceResource.addMethod('DELETE', this.spacesTable.deleteLambdaIntegration);
 
   }
 }
