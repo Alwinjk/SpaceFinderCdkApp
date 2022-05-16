@@ -15,6 +15,7 @@ export class SpaceFinderCdkAppStack extends Stack {
     primaryKey: 'spacesId',
     createLambdaPath: 'create', // if error causes change to Create
     readLambdaPath: 'read', // if error causes change to Read
+    updateLambdaPath: 'update',
     secondaryIndexes: ['location']
 
   })
@@ -52,6 +53,7 @@ export class SpaceFinderCdkAppStack extends Stack {
     const spaceResource = this.api.root.addResource('spaces');
     spaceResource.addMethod('POST', this.spacesTable.createLambdaIntegration)
     spaceResource.addMethod('GET', this.spacesTable.readLambdaIntegration);
+    spaceResource.addMethod('PUT', this.spacesTable.updateLambdaIntegration);
 
   }
 }
