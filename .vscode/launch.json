@@ -4,18 +4,18 @@
     // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
     "version": "0.2.0",
     "configurations": [{
-        "type": "node",
-        "request": "launch",
-        "name": "Debug Program",
-        "runtimeArgs": [
-            "-r",
-            "ts-node/register"
-        ],
-        "args": [
-            "${relativeFile}"
-        ],
-        "env": {
-            "AWS_REGION": "us-east-2"
+        "type": "aws-sam",
+        "request": "direct-invoke",
+        "name": "SpaceFinderCdkApp:services/SpacesTables/read.handler (nodejs14.x)",
+        "invokeTarget": {
+            "target": "code",
+            "projectRoot": "${workspaceFolder}/",
+            "lambdaHandler": "services/SpacesTables/read.handler"
+        },
+        "lambda": {
+            "runtime": "nodejs14.x",
+            "payload": {},
+            "environmentVariables": {}
         }
-    }]
+    }, ]
 }
